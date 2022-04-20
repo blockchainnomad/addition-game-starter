@@ -1,8 +1,9 @@
 const HDWalletProvider = require('truffle-hdwallet-provider-klaytn')
+const fs = require('fs');
 const NETWORK_ID = '1001'
 const GASLIMIT = '20000000'
 const URL = 'https://api.baobab.klaytn.net:8651'
-const PRIVATE_KEY = '0xcd0481e4ba0af63374db94dcf50fa6f540a7a243b8568699119924110eadac4f'
+const PRIVATE_KEY = fs.readFileSync('.secret').toString().trim();
 
 module.exports = {
     networks: {
